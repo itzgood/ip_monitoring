@@ -1,0 +1,10 @@
+---
+:concurrency: 5
+:queues:
+  - queue_ips
+  - ping_ips
+:scheduler:
+  :schedule:
+    queue_ip_worker:
+      cron: '0 * * * * *' # Runs once per minute
+      class: "QueueIpWorker"
